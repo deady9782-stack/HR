@@ -354,7 +354,7 @@ client.on('interactionCreate', async interaction => {
       if (interaction.commandName === 'portal') {
         let portalUrl;
         try {
-          portalUrl = new URL(process.env.PORTAL_URL);
+          portalUrl = new URL(process.env.PORTAL_URL || 'https://hr-production-a7ae.up.railway.app');
         } catch {
           return interaction.reply({ content: 'The portal link is not configured. Ask an administrator to set PORTAL_URL.', ephemeral: true });
         }
